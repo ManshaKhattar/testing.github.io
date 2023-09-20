@@ -1,0 +1,100 @@
+{% comment %} <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TextUtils</title>
+</head>        
+<body>
+    <h1>Welcome to text analyzer.enter your text below</h1>
+{% comment %} mansha is awesomee!!
+{{name}} is from {{place}} {% endcomment %}
+{% comment %}  
+</body>
+</html>  {% endcomment %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MK Productions</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  </head>
+ 
+  <body>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">MK Productions</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Facilities</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Contact Us
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <li><a class="dropdown-item" href="#">Phone1</a></li>
+                  <li><a class="dropdown-item" href="#">Phone2</a></li>
+                  <li><a class="dropdown-item" href="#">Bhaad me jao</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+      </nav>
+{% comment %} navbar khatam {% endcomment %}
+
+      <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Welcome to MK Productions</strong> Dafa ho jao.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+
+      <div class="container">
+        <form action='/analyze' method='post'>   {% csrf_token %}
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Likho Kuch idhar aur jaadu dekho!!</label>
+            <textarea class="form-control" name='text'id="exampleFormControlTextarea1" rows="3"></textarea>
+          </div>
+      <div class="form-check form-switch">
+            <input class="form-check-input" name="removepunc" type="checkbox" role="switch" id="flexSwitchCheckDefault1" checked>
+            <label class="form-check-label" for="flexSwitchCheckDefault1">Remove Punctuations</label>
+          </div>   
+
+     <div class="form-check form-switch">
+            <input class="form-check-input" name="fullcaps" type="checkbox" role="switch" id="flexSwitchCheckDefault2" checked>
+            <label class="form-check-label" for="flexSwitchCheckDefault2">UPPERCASE</label>
+          </div>  
+     <div class="form-check form-switch">
+            <input class="form-check-input" name="newlineremover" type="checkbox" role="switch" id="flexSwitchCheckDefault3" checked>
+            <label class="form-check-label" for="flexSwitchCheckDefault3"> New Line Remover</label>
+          </div>  
+      <div class="form-check form-switch">
+            <input class="form-check-input" name="extraspaceremover" type="checkbox" role="switch" id="flexSwitchCheckDefault4" checked>
+            <label class="form-check-label" for="flexSwitchCheckDefault4"> Extra Spaces Remover</label>
+          </div>  <br>
+    <button type="submit" class="btn btn-dark">Analyze Text</button>
+    
+        </form>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+ 
+</body>
+
+</html>
